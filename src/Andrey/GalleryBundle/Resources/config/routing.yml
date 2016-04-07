@@ -1,0 +1,15 @@
+andrey_gallery_homepage:
+    path:     /
+    defaults: { _controller: AndreyGalleryBundle:Default:index }
+
+andrey_gallery_album_list:
+    path:     /gallery/list.{_format}
+#    type:     rest
+    defaults: { _controller: AndreyGalleryBundle:List:index, _format: json }
+    methods:  ["GET"]
+
+andrey_gallery_album_get:
+    path:     /gallery/album
+#    type:     rest
+    defaults: { _controller: AndreyGalleryBundle:Album:index }
+    methods:  ["GET"]
