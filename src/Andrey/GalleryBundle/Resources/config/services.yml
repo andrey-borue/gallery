@@ -1,3 +1,7 @@
+imports:
+    - { resource: entity_managers.yml }
+    - { resource: controllers.yml }
+
 services:
 #    andrey_gallery.example:
 #        class: Andrey\GalleryBundle\Example

@@ -1,0 +1,7 @@
+services:
+
+    andrey.gallery.controller.list:
+        class: Andrey\GalleryBundle\Controller\ListController
+        arguments:
+            - @andrey.gallery_bundle.album_manager
+            - @knp_paginator

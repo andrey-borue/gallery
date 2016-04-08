@@ -1,0 +1,12 @@
+services:
+    andrey.gallery_bundle.general_manager:
+        class: Andrey\GalleryBundle\EntityManager\AbstractManager
+        arguments: [@doctrine.orm.entity_manager]
+        abstract: true
+        lazy: true
+
+    andrey.gallery_bundle.album_manager:
+        parent: andrey.gallery_bundle.general_manager
+        class: Andrey\GalleryBundle\EntityManager\AlbumManager
+        tags:
+            - {name: enter.manager}
