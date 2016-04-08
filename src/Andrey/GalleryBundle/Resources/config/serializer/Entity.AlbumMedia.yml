@@ -1,0 +1,9 @@
+Andrey\GalleryBundle\Entity\AlbumMedia:
+    exclusion_policy: ALL
+    properties:
+        id:
+            type: integer
+            exclude: false
+        url:
+            type: string
+            exclude: false

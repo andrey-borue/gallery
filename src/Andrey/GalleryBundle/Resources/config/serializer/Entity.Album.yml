@@ -1,0 +1,12 @@
+Andrey\GalleryBundle\Entity\Album:
+    exclusion_policy: ALL
+    properties:
+        id:
+            type: integer
+            exclude: false
+        name:
+            type: string
+            exclude: false
+        medias:
+            type: array<Andrey\GalleryBundle\Entity\AlbumMedia>
+            exclude: false

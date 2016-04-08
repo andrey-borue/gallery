@@ -1,0 +1,29 @@
+Andrey\GalleryBundle\Entity\AlbumMedia:
+    type: entity
+    table: null
+    repositoryClass: Andrey\GalleryBundle\Repository\AlbumMediaRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            nullable: true
+        url:
+            type: text
+        position:
+            type: smallint
+            gedmo:
+                sortable: true
+    manyToOne:
+        album:
+            targetEntity: Album
+            inversedBy: medias
+            joinColumn:
+                name: album_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

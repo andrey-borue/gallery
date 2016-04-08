@@ -2,25 +2,27 @@
 namespace Andrey\GalleryBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * Album Model
+ * AlbumMedia Model
  * @author Andrey Borue <andrey@borue.ru>
  */
-class Album
+class AlbumMedia
 {
     /**
-     * Album ID
      * @var int
      */
     private $id;
 
     /**
-     * Albun name
      * @var string
      */
     private $name;
+
+    /**
+     * @var string
+     */
+    private $url;
 
     /**
      * @var int
@@ -28,15 +30,9 @@ class Album
     private $position;
 
     /**
-     * Media collection
-     * @var AlbumMedia[]|ArrayCollection
+     * @var Album
      */
-    private $medias;
-
-    public function __construct()
-    {
-        $this->medias = new ArrayCollection();
-    }
+    private $album;
 
     /**
      * @return int
@@ -58,34 +54,22 @@ class Album
     }
 
     /**
-     * @return AlbumMedia[]|ArrayCollection
+     * @return Album
      */
-    public function getMedias()
+    public function getAlbum()
     {
-        return $this->medias;
+        return $this->album;
     }
 
     /**
-     * @param AlbumMedia[]|ArrayCollection $medias
+     * @param Album $album
      * @return $this
      */
-    public function setMedias($medias)
+    public function setAlbum($album)
     {
-        $this->medias = new ArrayCollection();
-        foreach ($medias as $media) {
-            $this->addMedia($media);
-        }
+        $this->album = $album;
 
         return $this;
-    }
-
-    /**
-     * @param AlbumMedia $media
-     */
-    public function addMedia(AlbumMedia $media)
-    {
-        $this->medias->add($media);
-        $media->setAlbum($this);
     }
 
     /**
@@ -102,7 +86,7 @@ class Album
      * Set name
      *
      * @param string $name
-     * @return Album
+     * @return AlbumMedia
      */
     public function setName($name)
     {
@@ -119,5 +103,28 @@ class Album
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return AlbumMedia
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string 
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

@@ -5,6 +5,10 @@ namespace Andrey\GalleryBundle\EntityManager;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityRepository;
 
+/**
+ * @author Andrey Borue <andrey@borue.ru>
+ * @package Andrey\GalleryBundle\EntityManager
+ */
 abstract class AbstractManager
 {
     /**

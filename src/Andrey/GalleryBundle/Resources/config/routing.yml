@@ -4,14 +4,10 @@ andrey_gallery_homepage:
 
 andrey_gallery_album_list:
     path:     /gallery/list.{_format}
-#    type:     rest
-#    defaults: { _controller: AndreyGalleryBundle:List:index, _format: json }
     defaults: { _controller: andrey.gallery.controller.list:indexAction, _format: json }
-#    defaults: { _controller: enter.controller.search_autocomplete:autocompleteAction }
     methods:  ["GET"]
 
 andrey_gallery_album_get:
-    path:     /gallery/album
-#    type:     rest
-    defaults: { _controller: AndreyGalleryBundle:Album:index }
+    path:     /gallery/album.{_format}
+    defaults: { _controller: andrey.gallery.controller.album:indexAction, _format: json }
     methods:  ["GET"]

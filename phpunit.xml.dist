@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        colors="true"
+        convertErrorsToExceptions="true"
+        convertNoticesToExceptions="true"
+        convertWarningsToExceptions="true"
+        forceCoversAnnotation="false"
+        mapTestClassNameToCoveredClassName="false"
+        processIsolation="false"
+        stopOnError="true"
+        stopOnFailure="true"
+        stopOnIncomplete="false"
+        stopOnSkipped="false"
+        timeoutForSmallTests="1"
+        timeoutForMediumTests="10"
+        timeoutForLargeTests="60"
+        verbose="false">
+    <testsuites>
+        <testsuite name="bundles">
+            <directory>src/Andrey/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./bin</directory>
+                <directory>./web</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <!--<log type="coverage-html" target="build/coverage-html"/>-->
+        <!--<log type="coverage-clover" target="build/coverage-xml"/>-->
+        <!--<log type="coverage-crap4j" target="build/logs/crap4j.xml"/>-->
+        <!--<log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false"/>-->
+    </logging>
+    <php>
+        <server name="KERNEL_DIR" value="app" />
+    </php>
+</phpunit>

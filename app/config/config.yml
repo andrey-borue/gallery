@@ -2,11 +2,14 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: doctrine_extension.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+
+nelmio_api_doc: ~
 
 framework:
     #esi:             ~
@@ -29,6 +32,9 @@ framework:
         handler_id:  ~
     fragments:       ~
     http_method_override: true
+    serializer:
+        enabled: true
+
 
 # Twig Configuration
 twig:
@@ -57,6 +63,14 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+#        mappings:
+#            translatable:
+#                type: yml
+#                alias: Gedmo
+#                prefix: Gedmo\Translatable\Entity
+
+
+
 # Swiftmailer Configuration
 swiftmailer:
     transport: "%mailer_transport%"
@@ -66,10 +80,16 @@ swiftmailer:
     spool:     { type: memory }
 
 jms_serializer:
+    metadata:
+        auto_detection: false
+        directories:
+            AndreyGalleryBundle:
+                namespace_prefix: "Andrey\\GalleryBundle"
+                path: "@AndreyGalleryBundle/Resources/config/serializer"
     visitors:
         json:
             options: [JSON_UNESCAPED_SLASHES, JSON_UNESCAPED_UNICODE]
-#
+
 #sensio_framework_extra:
 #    request:
 #        converters: true
@@ -82,6 +102,7 @@ fos_rest:
     view:
         formats:
             json: true
+            xml: true
         templating_formats:
             json: false
 

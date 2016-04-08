@@ -10,3 +10,9 @@ services:
         class: Andrey\GalleryBundle\EntityManager\AlbumManager
         tags:
             - {name: enter.manager}
+
+    andrey.gallery_bundle.album_media_manager:
+        parent: andrey.gallery_bundle.general_manager
+        class: Andrey\GalleryBundle\EntityManager\AlbumMediaManager
+        tags:
+            - {name: enter.manager}

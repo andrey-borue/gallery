@@ -4,4 +4,10 @@ services:
         class: Andrey\GalleryBundle\Controller\ListController
         arguments:
             - @andrey.gallery_bundle.album_manager
+
+    andrey.gallery.controller.album:
+        class: Andrey\GalleryBundle\Controller\AlbumController
+        arguments:
+            - @andrey.gallery_bundle.album_media_manager
+            - @andrey.gallery_bundle.album_manager
             - @knp_paginator

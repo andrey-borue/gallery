@@ -12,4 +12,10 @@ Andrey\GalleryBundle\Entity\Album:
         name:
             type: string
             length: 255
+
+    oneToMany:
+        medias:
+            targetEntity: AlbumMedia
+            mappedBy: album
+
     lifecycleCallbacks: {  }

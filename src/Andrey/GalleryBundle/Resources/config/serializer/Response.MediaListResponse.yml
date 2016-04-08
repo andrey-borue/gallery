@@ -1,0 +1,12 @@
+Andrey\GalleryBundle\Response\MediaListResponse:
+    exclusion_policy: ALL
+    properties:
+        currentPage:
+            type: integer
+            exclude: false
+        pageCount:
+            type: integer
+            exclude: false
+        medias:
+            type: array<Andrey\GalleryBundle\Entity\AlbumMedia>
+            exclude: false
