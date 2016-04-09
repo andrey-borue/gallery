@@ -25,7 +25,7 @@ class LoadUserData implements FixtureInterface
             ]
         ],
         [
-            'name' => 'X1',
+            'name' => 'Beautiful Bali',
             'count' => 30,
             'medias' => [
                 ['url' => 'https://lh3.googleusercontent.com/GHdRkvdUVuveCxyLxSGcvWUiP_vdlYXsOmjZSTtIjaewGetHgL4UzZcuEfrK8Xxxf9alCwT7_95He229ZnklgxYyjSjNEeg8UNFu1-Ywq9-4mTBNCEqR5BOALePiU6_P_iChif09ukXZo4E6zEchhULsfsvjATLi3yOSBXWTdyhmrxzLDV3sA28eBJ4R5O5j2pZiiE1J9SpeP1nJaVcqxv9yLBHqhSilLkPbo2DOtKfuoBPti32zHriUNfEADJGnv4586sz_swrOiLm5sKq3PV1NzPbVyBmy8yXbsBdeVRgwff5ii3Mr35X7fBpQVWDWE5OrtVw7ubhWRmrxL54kzNtuHUPolH3hCejzKZYRMajVHUJLhc01J062RuGDNCPgpxsH16IYm-s5_f4jlt902TYdOcPBKqZdBlctGAgQB2FciZvxvVwSCUQjFwk4ZAPsyuN2xTJotK9QR3b1w61mJFhclsEadEGCC0YuKM-h5ht2fmmolG_8kdtnYIXBc0IgMZDnyDIBznn1wJEwgbV2Y0iNu-rpjRV72MKpBWxdD9k2iSYG29T5wsslVAsBywVDpKLepg=w442-h331-no'],
@@ -33,7 +33,7 @@ class LoadUserData implements FixtureInterface
             ]
         ],
         [
-            'name' => 'X2',
+            'name' => 'Pai Farm',
             'count' => 30,
             'medias' => [
                 ['url' => 'https://lh3.googleusercontent.com/V2VzmFdESC4aAc4erBXLESGCJj4id8RBcQHqxIr0Oq6NXWocFmk1cNjupBWkurquCTopWJVGHEWK1akZXjVYK5d6loQglNGKkp-3gYw5KOxQdHH7Nk1VTTSBCoNpBzkPwPVENiSRYrkrIR30esmGs09BFuGOe6cQhbgvuYYoFkaY-YpI5I_vWKxyZgLIkdG1moJWYMHtVmoXqB7N1CG0LyuJJ8ctYtKRZE4B0DTFC9SZRgk3aKn_BMDzoOKwjqA1FDqsGmk6-C-xF4w-EcoBm4P_ys8VTF707jMd0r84AS5L4uJCU05xAHYMBXWtgM9V5a3bTdPqR_vddYMP1RuZw6C1gI1DAqWGYpv5vhgjYqFFrxEg6XjquwW6l64MNVOTXz2K1OF1Da9SuL9tCMErwMpCywVoWyqMFNK1ownUheMrpR-xoQ1us9i7YR8phD12DDtCVUgzuxUoqG7Tn_zMg7f-igTn5KiMw-liRy5sprnv4qlINExrFaRyTWe0ldP4E3OwCoplcKqnZzPodncMEmIEEP8PQqcw4Vac9Xj-MFtnkt2rm-dM75XnwVwwPXbt-fjkGQ=w442-h331-no'],

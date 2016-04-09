@@ -78,27 +78,22 @@ class AlbumController extends Controller
      */
     public function indexAction(ParamFetcherInterface $paramFetcher)
     {
-        $response = new MediaListResponse();
-
         $album = $this->albumManager->findById($paramFetcher->get('id'));
 
         if (!$album) {
             throw new NotFoundHttpException('album not found');
         }
 
-        $currentPage = $paramFetcher->get('page');
-        $mediasPerPage = $paramFetcher->get('medias');
-        $query = $this->albumMediaManager->getQueryForPaginator($album);
-
         /** @var \Knp\Bundle\PaginatorBundle\Pagination\SlidingPagination $pagination */
-        $pagination = $this->paginator->paginate($query, $currentPage, $mediasPerPage);
+        $pagination = $this->paginator->paginate(
+            $this->albumMediaManager->getQueryForPaginator($album),
+            $paramFetcher->get('page'),
+            $paramFetcher->get('medias')
+        );
 
-        $response
+        return (new MediaListResponse())
             ->setMedias($pagination->getItems())
             ->setPageCount($pagination->getPageCount())
             ->setCurrentPage($pagination->getCurrentPageNumber());
-
-
-        return $response;
     }
 }

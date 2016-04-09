@@ -38,6 +38,7 @@ class ListControllerTest extends JsonTestCase
      */
     public function testIndexMock()
     {
+        Debug::enable(~E_DEPRECATED, false);
 
         $paramFetcherMock = $this->getMock(
             'FOS\RestBundle\Request\ParamFetcher',
