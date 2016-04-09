@@ -66,7 +66,7 @@ class AlbumController extends Controller
      *
      *
      * @Rest\QueryParam(
-     *      name="id", strict=true, nullable=false, requirements="[0-9]{1,2}", description="album id"
+     *      name="id", strict=true, nullable=false, requirements="[0-9]{1,3}", description="album id"
      * )
      *
      * @Rest\View()
