@@ -1,0 +1,19 @@
+{
+  "name": "skeleton",
+  "version": "0.0.1",
+  "description": "Simple gallery application",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrey.borue/simple-js-gallery"
+  },
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-less": "latest",
+    "grunt-contrib-requirejs": "latest",
+    "grunt-contrib-watch": "latest"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0"
+  }
+}

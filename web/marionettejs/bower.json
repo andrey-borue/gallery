@@ -1,0 +1,23 @@
+{
+  "name": "Andrey gallery",
+  "authors": [
+    "Andrey Borue <andrey.borue@gmail.com>"
+  ],
+  "description": "test application",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "marionette#^2.4.5",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "requirejs": "^2.2.0"
+  }
+}

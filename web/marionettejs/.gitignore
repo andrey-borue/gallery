@@ -1,0 +1,5 @@
+node_modules
+app/scripts/vendor
+dist
+.idea
+app/styles/styles.css
