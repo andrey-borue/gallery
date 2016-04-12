@@ -10,7 +10,7 @@ MyApp.LibraryRouting = function(){
   });
 
   MyApp.vent.on("search:term", function(albumNumber, pageNumber){
-    if (pageNumber < 2) {
+    if (pageNumber < 2 || isNaN(pageNumber)) {
       Backbone.history.navigate("album/" + albumNumber);
     } else {
       Backbone.history.navigate("album/" + albumNumber + '/page/' + pageNumber);

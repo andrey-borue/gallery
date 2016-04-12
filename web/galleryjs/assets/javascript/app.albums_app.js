@@ -1,44 +1,11 @@
-//MyApp.Albums = {};
-//
-//MyApp.Albums.DefaultView = Backbone.Marionette.ItemView.extend({
-//  template: "#albums-template",
-//  className: "close"
-//});
-//
-//MyApp.Albums.Router = Backbone.Marionette.AppRouter.extend({
-//    appRoutes: {
-//      "albums": "show"
-//    }
-//});
-//
-//MyApp.Albums.show = function(){
-//  var listView = new MyApp.Albums.DefaultView();
-//  MyApp.content.show(listView);
-//  Backbone.history.navigate("albums");
-//}
-//
-//MyApp.addInitializer(function(){
-//  MyApp.Albums.router = new MyApp.Albums.Router({
-//    controller: MyApp.Albums
-//  });
-//
-//  MyApp.vent.trigger("routing:started");
-//});
-
-
-
-
-// ------------------
-
-
 MyApp.AlbumsApp = function(){
   var AlbumsApp = {};
 
   var Layout = Backbone.Marionette.Layout.extend({
-    template: "#albums-template",
+    template: "#albums-layout",
 
     regions: {
-      list: "#list"
+      list: "#albumContainer"
     }
   });
 
@@ -84,6 +51,14 @@ MyApp.AlbumsApp = function(){
   });
 
   AlbumsApp.Albums = new Albums();
+
+  AlbumsApp.loadall = function(){
+    AlbumsApp.initializeLayout();
+    MyApp.AlbumsApp.AlbumsList.show(AlbumsApp.Albums);
+
+    MyApp.vent.trigger("loadall:term");
+  };
+
 
   AlbumsApp.initializeLayout = function(){
     AlbumsApp.layout = new Layout();

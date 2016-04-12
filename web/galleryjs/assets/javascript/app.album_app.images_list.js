@@ -54,6 +54,9 @@ MyApp.AlbumApp.ImagesList = function(){
             MyApp.vent.on("search:stop", function(){ $spinner.fadeOut(); });
             MyApp.vent.on("search:term", function(albumNumber, pageNumber){
                 self.$('#albumNumber').val(albumNumber);
+                if (isNaN(pageNumber) || pageNumber < 2) {
+                    pageNumber = 1;
+                }
                 self.$('#pageNumber').val(pageNumber);
             });
         },
