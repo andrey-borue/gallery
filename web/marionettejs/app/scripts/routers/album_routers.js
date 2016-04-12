@@ -4,8 +4,8 @@ define(['backbone.marionette', '../controllers/album_app'], function(App, AlbumA
         AlbumRouting.Router = Backbone.Marionette.AppRouter.extend({
             appRoutes: {
                 '': 'albumList',
-                'album/:id': 'search',
-                'album/:id/page/:page': 'search'
+                'album/:id': 'imageList',
+                'album/:id/page/:page': 'imageList'
             }
         });
 

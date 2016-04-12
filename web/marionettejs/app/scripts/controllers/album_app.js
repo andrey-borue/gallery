@@ -1,28 +1,20 @@
-define(
-    ['backbone.marionette', '../views/albums_list_view', '../views/album_view', '../models/album'],
-function(App, AlbumsListView, AlbumView, AlbumModel) {
+define([
+    'backbone.marionette',
+    '../views/albums_list_view',
+    '../views/album_view',
+    '../models/album',
+    '../models/albums_list'
+], function(App, AlbumsListView, AlbumView, AlbumModel, AlbumsListModel) {
 
 
     var AlbumApp = function(){
         var AlbumApp = {};
 
-        AlbumApp.alert = function(message){
-            alert(message);
-        };
-
-        AlbumApp.privateAlert = function(message){
-            privateMessage(message);
-        };
-
-        var privateMessage = function(message){
-            alert('private: ' + message);
-        };
-
         return AlbumApp;
     }();
 
-
-    AlbumApp.search = function(term){
+    
+    AlbumApp.imageList = function(term){
         //LibraryApp.initializeLayout();
         //MyApp.LibraryApp.BookList.showBooks(LibraryApp.Books);
 
@@ -32,42 +24,32 @@ function(App, AlbumsListView, AlbumView, AlbumModel) {
     };
 
     AlbumApp.albumList = function(){
-        console.log(2);
-
         $.get('http://127.0.0.1:8000/api/gallery/list?limit=20', function(data) {
-
             var options = [];
             data.forEach(function(item, i, arr) {
-
-                //console.log(item);
-                var option = {
-                   name: item.name,
-                   url: 'sss'
-                };
-                options.push(option);
-
-                //alert( i + ": " + item + " (массив:" + arr + ")" );
+                options.push({name: item.name, url: item.url});
             });
 
-            //console.log(options);
-            //
-            //var albums = new AlbumsList(options);
-
-            //MyApp.start({albums: albums});
-
-
             options = [
-                { url: 'Test', name: 'name1' },
-                { url: 'Test1', name: 'name2' }
+                new AlbumModel({ url: 'Test', name: 'name1' }),
+                new AlbumModel({ url: 'Test1', name: 'name2' })
             ];
 
             //console.log(options);
 
+            var albumsListModel = new AlbumsListModel(options);
+            albumsListModel.fetch();
 
-            //MyApp.listRegion.show(new AlbumsListView({collection: new AlbumsList(options)}));
-            //MyApp.listRegion.show(new AlbumView({model: new AlbumModel({ url: 'Test', name: 'name1' })}));
-            MyApp.listRegion.show(new AlbumView({model: new AlbumModel({ url: 'Test', name: 'name1' })}));
+            // var model = new AlbumModel({ url: 'Test', name: 'name1' });
+            // var view = new AlbumView({model: model});
+            // MyApp.listRegion.show(view);
+            // model.name =123;
+            // view.renderCollection();
 
+
+            // MyApp.listRegion.show(new AlbumsListView({model: new AlbumsListModel(options)}));
+            // MyApp.listRegion.show(new AlbumsListView({model: albumsListModel}));
+        
         }, 'json');
 
 

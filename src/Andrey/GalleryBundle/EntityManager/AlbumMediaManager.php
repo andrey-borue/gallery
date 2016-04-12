@@ -17,7 +17,9 @@ class AlbumMediaManager extends AbstractManager
      */
     public function getEntityClassName()
     {
-        return AlbumMedia::class;
+//        return AlbumMedia::class;
+        return 'Andrey\GalleryBundle\Entity\AlbumMedia';
+
     }
 
     /**

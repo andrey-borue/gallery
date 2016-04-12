@@ -38,6 +38,7 @@ function(App, AlbumsListView) {
     contentRegion: "#album_content"
   });
 
+
   MyApp.addInitializer(function(options){
       //albumsCatalogView = new AlbumsListView({
       //  collection: options.albums
