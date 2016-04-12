@@ -26,6 +26,29 @@ class MediaListResponse
      * @var integer
      */
     private $pageSize;
+    /**
+     * @var integer
+     */
+    private $totalItems;
+
+    /**
+     * @return int
+     */
+    public function getTotalItems()
+    {
+        return $this->totalItems;
+    }
+
+    /**
+     * @param int $totalItems
+     * @return $this
+     */
+    public function setTotalItems($totalItems)
+    {
+        $this->totalItems = $totalItems;
+
+        return $this;
+    }
 
     /**
      * @return int

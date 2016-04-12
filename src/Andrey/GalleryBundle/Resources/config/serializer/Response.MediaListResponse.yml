@@ -7,6 +7,9 @@ Andrey\GalleryBundle\Response\MediaListResponse:
         pageCount:
             type: integer
             exclude: false
+        totalItems:
+            type: integer
+            exclude: false
         medias:
             type: array<Andrey\GalleryBundle\Entity\AlbumMedia>
             exclude: false

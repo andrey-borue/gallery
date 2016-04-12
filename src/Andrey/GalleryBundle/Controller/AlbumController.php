@@ -94,6 +94,7 @@ class AlbumController extends Controller
         return (new MediaListResponse())
             ->setMedias($pagination->getItems())
             ->setPageCount($pagination->getPageCount())
+            ->setTotalItems($pagination->getTotalItemCount())
             ->setCurrentPage($pagination->getCurrentPageNumber());
     }
 }

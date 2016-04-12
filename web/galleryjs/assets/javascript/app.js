@@ -36,18 +36,18 @@ MyApp.MenuView = Backbone.Marionette.View.extend({
   el: "#menu",
   
   events: {
-    'click #menu .js-menu-books': 'showLibraryApp',
-    'click #menu .js-menu-close': 'closeApp'
+    'click #menu .js-menu-books': 'showAlbumApp',
+    'click #menu .js-menu-list': 'ShowListApp'
   },
   
-  showLibraryApp: function(e){
+  showAlbumApp: function(e){
     e.preventDefault();
-    MyApp.LibraryApp.defaultSearch();
+    MyApp.AlbumApp.defaultSearch();
   },
   
-  closeApp: function(e){
+  ShowListApp: function(e){
     e.preventDefault();
-    MyApp.Closer.close();
+    MyApp.Albums.show();
   }
 });
 
