@@ -15,9 +15,9 @@ MyApp.AlbumsApp = function(){
     model: Album,
 
     initialize: function(){
-      var self = this;
-      _.bindAll(this, "loadall"); //, "moreBooks"
-      MyApp.vent.on("loadall:term", function(){ self.loadall(); });
+        var self = this;
+        _.bindAll(this, "loadall"); //, "moreBooks"
+        MyApp.vent.on("loadall:term", function(){ self.loadall(); });
     },
 
     loadall: function(){
@@ -29,20 +29,19 @@ MyApp.AlbumsApp = function(){
     },
 
     fetchAlbums: function(callback){
-      var self = this;
-      MyApp.vent.trigger("loadall:start");
-
+      //var self = this;
+      //MyApp.vent.trigger("loadall:start");
       var query = 'medias=1';
 
       $.get('http://127.0.0.1:8000/api/gallery/list', query, function (res) {
-        MyApp.vent.trigger("loadall:stop");
-            var searchResults = [];
-            _.each(res.medias, function(item){
+          //MyApp.vent.trigger("loadall:stop");
+          var searchResults = [];
+          _.each(res, function(item){
                 searchResults[searchResults.length] = new Album({
                     name: item.name,
                     id: item.id
                 });
-            });
+          });
           callback(searchResults);
           return searchResults;
       }, 'json')

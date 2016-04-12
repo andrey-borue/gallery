@@ -18,7 +18,7 @@ MyApp.AlbumsRouting = function(){
       controller: MyApp.AlbumsApp
     });
     
-    MyApp.vent.trigger("routing:started");
+    //MyApp.vent.trigger("routing:started");
   });
 
   return AlbumsRouting;

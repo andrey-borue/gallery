@@ -8,7 +8,7 @@ MyApp.AlbumsApp.AlbumsList = function(){
         },
 
         showAlbumDetail: function(){
-            console.log('click to album');
+
         }
     });
 
@@ -18,12 +18,12 @@ MyApp.AlbumsApp.AlbumsList = function(){
         itemView: AlbumView,
 
         initialize: function(){
-            //_.bindAll(this);
+            _.bindAll(this);
             var self = this;
         },
 
         events: {
-          //'scroll': 'loadMoreBooks'
+
         },
 
         appendHtml: function(collectionView, itemView){
@@ -36,12 +36,6 @@ MyApp.AlbumsApp.AlbumsList = function(){
           var albumsListView = new AlbumsListView({ collection: images });
           MyApp.AlbumsApp.layout.list.show(albumsListView);
     };
-
-    MyApp.vent.on("layout:rendered", function(){
-          // render a view for the existing HTML in the template, and attach it to the layout (i.e. don't double render)
-          //var searchView = new SearchView();
-          //MyApp.AlbumApp.layout.search.attachView(searchView);
-    });
 
     return AlbumsList;
 }();

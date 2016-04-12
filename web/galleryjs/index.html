@@ -16,7 +16,7 @@
 
 
   <div id="menu">
-    <a href="#albums" class="js-menu-albums">Last album images</a>
+    <a href="#albums" class="js-menu-albums" style="display: none">Last album images</a>
     <a href="#" class="js-menu-list">Albums List</a>
   </div>
   <div id="content"></div>
@@ -59,7 +59,7 @@
   </script>
 
   <script type="text/template" id="album-template">
-    <img src="<%= (thumbnail ? thumbnail : 'http://placehold.it/100x150') %>" alt="" class="imageprev" />
+    <p><a href="#/album/<%= id %>"><%= name %></a></p>
   </script>
 
 
@@ -99,8 +99,8 @@
   <script type="text/javascript" src="/galleryjs/assets/javascript/app.album_app.images_list.js"></script>
   <script type="text/javascript" src="/galleryjs/assets/javascript/app.albums_app.albums_list.js"></script>
   <!--<script type="text/javascript" src="/galleryjs/assets/javascript/app.album_app.image_list.js"></script>-->
-  <script type="text/javascript" src="/galleryjs/assets/javascript/app.album_app.routing.js"></script>
   <script type="text/javascript" src="/galleryjs/assets/javascript/app.albums_app.routing.js"></script>
+  <script type="text/javascript" src="/galleryjs/assets/javascript/app.album_app.routing.js"></script>
 
   <script type="text/javascript">
     MyApp.start();

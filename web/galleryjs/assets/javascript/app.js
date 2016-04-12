@@ -31,32 +31,30 @@ MyApp.addRegions({
   menu: "#menu",
   modal: ModalRegion
 });
-
-MyApp.MenuView = Backbone.Marionette.View.extend({
-  el: "#menu",
-  
-  events: {
-    'click #menu .js-menu-albums': 'showAlbumApp',
-    'click #menu .js-menu-list': 'ShowListApp'
-  },
-  
-  showAlbumApp: function(e){
-    e.preventDefault();
-    console.log('showAlbumApp');
-    MyApp.AlbumApp.defaultSearch();
-  },
-  
-  ShowListApp: function(e){
-    e.preventDefault();
-    console.log('ShowListApp');
-    MyApp.AlbumsApp.loadall();
-  }
-});
-
-MyApp.vent.on("layout:rendered", function(){
-  var menu = new MyApp.MenuView();
-  MyApp.menu.attachView(menu);
-});
+//
+//MyApp.MenuView = Backbone.Marionette.View.extend({
+//  el: "#menu",
+//
+//  events: {
+//    //'click #menu .js-menu-albums': 'showAlbumApp',
+//    //'click #menu .js-menu-list': 'ShowListApp'
+//  },
+//
+//  showAlbumApp: function(e){
+//    e.preventDefault();
+//    MyApp.AlbumApp.defaultSearch();
+//  },
+//
+//  ShowListApp: function(e){
+//    e.preventDefault();
+//    MyApp.AlbumsApp.loadall();
+//  }
+//});
+//
+//MyApp.vent.on("layout:rendered", function(){
+//  var menu = new MyApp.MenuView();
+//  MyApp.menu.attachView(menu);
+//});
 
 MyApp.vent.on("routing:started", function(){
   if( ! Backbone.History.started) Backbone.history.start();

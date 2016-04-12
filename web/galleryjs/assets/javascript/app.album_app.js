@@ -31,8 +31,7 @@ MyApp.AlbumApp = function(){
       this.fetchImages(albumNumber, pageNumber, function(images){
         if(images.length < 1){
           MyApp.vent.trigger("search:noResults");
-        }
-        else{
+        } else {
           self.reset(images);
         }
       });
