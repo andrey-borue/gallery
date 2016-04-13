@@ -1,6 +1,5 @@
 MyApp = new Backbone.Marionette.Application();
   
-// see http://lostechies.com/derickbailey/2012/04/17/managing-a-modal-dialog-with-backbone-and-marionette/
 var ModalRegion = Backbone.Marionette.Region.extend({
   el: "#modal",
 
